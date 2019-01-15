@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import unittest
-
 import pytest
 
-from application import Application
-from vacancy import Vacancy
+from fixture.application import Application
+from model.vacancy import Vacancy
 
 def test_login_test_case(app):
     app.open_home_page()
