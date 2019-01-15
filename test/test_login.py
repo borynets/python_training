@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-
 from fixture.application import Application
 from model.vacancy import Vacancy
 
 def test_login_test_case(app):
     app.open_home_page()
-    app.login(username="romanovaua189@gmail.com", password="123456")
+    app.session.login(username="romanovaua189@gmail.com", password="123456")
     vacancy = Vacancy(title="Test tile", description="Test decsiprtion", minExperience=2)
     app.create_new_vacancy(vacancy)
-    app.logout()
+    app.session.logout()
     app.destroy()
 
 def tearDown(app):
